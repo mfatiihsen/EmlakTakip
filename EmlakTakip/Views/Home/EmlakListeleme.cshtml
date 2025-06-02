@@ -1,0 +1,141 @@
+@model List<EmlakTakip.Models.Emlak>
+
+@{
+    ViewData["Title"] = "Emlak Listesi";
+}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Emlak Listesi</h5>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover table-striped mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Başlık</th>
+                    <th>Tip</th>
+                    <th>Fiyat</th>
+                    <th>Konum</th>
+                    <th>Tarih</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@Model[i].Baslik</td>
+                        <td>@Model[i].Tip</td>
+                        <td>@Model[i].Fiyat.ToString("N0") ₺</td>
+                        <td>@Model[i].Adres</td>
+                        <td>@Model[i].IlanTarihi.ToString("dd.MM.yyyy")</td>
+                        <td>
+                            <a href="/Home/Details/@Model[i].Id" class="btn btn-sm btn-outline-secondary">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="@Url.Action("Edit", "Emlak", new { id = Model[i].Id })"
+                                class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></a>
+                            <a asp-action="Delete" asp-route-id="@Model.FirstOrDefault()?.Id"
+                                class="btn btn-danger btn-sm">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="emlakModal" tabindex="-1" aria-labelledby="emlakModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="emlakModalLabel">Emlak Detayı</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Kapat"></button>
+            </div>
+
+            <div class="modal-body">
+                <h4 id="modalBaslik" class="mb-3"></h4>
+
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">İlan Tipi:</div>
+                    <div class="col-sm-8" id="modalTip"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Fiyat:</div>
+                    <div class="col-sm-8" id="modalFiyat"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Adres:</div>
+                    <div class="col-sm-8" id="modalAdres"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Açıklama:</div>
+                    <div class="col-sm-8" id="modalAciklama"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Metrekare:</div>
+                    <div class="col-sm-8" id="modalMetrekare"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Oda Sayısı:</div>
+                    <div class="col-sm-8" id="modalOdaSayisi"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Isıtma Tipi:</div>
+                    <div class="col-sm-8" id="modalIsitmaTipi"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">Kat:</div>
+                    <div class="col-sm-8" id="modalKat"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-4 fw-bold">İlan Tarihi:</div>
+                    <div class="col-sm-8" id="modalIlanTarihi"></div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const modalElement = document.getElementById('emlakModal'); // Modal ID buraya uyacak
+        const emlakModal = new bootstrap.Modal(modalElement, {
+            backdrop: 'static',
+            keyboard: false
+        });
+
+        document.querySelectorAll('.btn-detay').forEach(button => {
+            button.addEventListener('click', function () {
+                var emlakId = this.getAttribute('data-id');
+                fetch(`/Home/DetayJson/${emlakId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('modalBaslik').textContent = data.baslik || '';
+                        document.getElementById('modalTip').textContent = data.tip || '';
+                        document.getElementById('modalFiyat').textContent = data.fiyat || '';
+                        document.getElementById('modalAdres').textContent = data.adres || '';
+                        document.getElementById('modalAciklama').textContent = data.aciklama || '';
+                        document.getElementById('modalMetrekare').textContent = data.metrekare || '';
+                        document.getElementById('modalOdaSayisi').textContent = data.odaSayisi || '';
+                        document.getElementById('modalIsitmaTipi').textContent = data.isitmaTipi || '';
+                        document.getElementById('modalKat').textContent = data.kat || '';
+                        document.getElementById('modalIlanTarihi').textContent = data.ilanTarihi || '';
+
+                        emlakModal.show();
+                    })
+                    .catch(err => alert('Detay bilgileri alınırken hata oluştu! ' + err.message));
+            });
+        });
+    </script>
+}

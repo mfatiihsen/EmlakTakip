@@ -1,0 +1,213 @@
+@model EmlakTakip.Models.Emlak
+@using Newtonsoft.Json
+
+@{
+    ViewData["Title"] = Model.Baslik;
+}
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #f5f7fa;
+        color: #222;
+    }
+
+    .emlak-detail-wrapper {
+        max-width: 1200px;
+        margin: 40px auto;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        background: white;
+    }
+
+    /* Fotoğraf slider bölümü */
+    .slider-container {
+        flex: 1.3;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        cursor: grab;
+        user-select: none;
+    }
+
+    /* Sağ bilgi bölümü */
+    .info-panel {
+        flex: 0.7;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-panel h1 {
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    .info-panel .price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .info-panel .details-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+
+    .info-panel .details-list li {
+        margin-bottom: 15px;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 6px;
+    }
+
+    .info-panel .details-list li span.label {
+        opacity: 0.8;
+    }
+
+    .info-panel .description {
+        font-weight: 300;
+        line-height: 1.5;
+        font-size: 1rem;
+        max-height: 140px;
+        overflow-y: auto;
+        padding-right: 5px;
+    }
+
+    /* Scrollbar modernize */
+    .info-panel .description::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .info-panel .description::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+
+    /* Responsive */
+    media (max-width: 900px) {
+        .emlak-detail-wrapper {
+            flex-direction: column;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .slider-container,
+        .info-panel {
+            flex: none;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .info-panel {
+            padding: 30px 20px;
+        }
+    }
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 5px 12px;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 50%;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+    }
+
+    .slider-btn:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #prevBtn {
+        left: 10px;
+    }
+
+    #nextBtn {
+        right: 10px;
+    }
+</style>
+
+<div class="emlak-detail-wrapper">
+
+    <div class="slider-container" id="sliderContainer">
+        @if (Model.Gorseller != null && Model.Gorseller.Any())
+        {
+            <button id="prevBtn" class="slider-btn">&#10094;</button>
+            <img src="@Model.Gorseller.FirstOrDefault().DosyaYolu" alt="Emlak Fotoğrafı" id="sliderImage"
+                draggable="false" />
+            <button id="nextBtn" class="slider-btn">&#10095;</button>
+        }
+        else
+        {
+            <img src="/images/no-image.png" alt="Fotoğraf Yok" id="sliderImage" draggable="false" />
+        }
+    </div>
+
+    <div class="info-panel">
+        <h1>@Model.Baslik</h1>
+        <div class="price">@String.Format("{0:C}", Model.Fiyat)</div>
+
+        <ul class="details-list">
+            <li><span class="label">İlan Tipi</span><span>@Model.Tip</span></li>
+            <li><span class="label">Adres</span><span>@Model.Adres</span></li>
+            <li><span class="label">Metrekare</span><span>@Model.Metrekare m²</span></li>
+            <li><span class="label">Oda Sayısı</span><span>@Model.OdaSayisi</span></li>
+            <li><span class="label">Isıtma Tipi</span><span>@Model.IsitmaTipi</span></li>
+            <li><span class="label">Kat</span><span>@Model.KatSayisi</span></li>
+            <li><span class="label">İlan Tarihi</span><span>@Model.IlanTarihi.ToString("dd.MM.yyyy")</span></li>
+        </ul>
+
+        <div class="description">
+            <strong>Açıklama:</strong>
+            <p>@Model.Aciklama</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const images = @Html.Raw(JsonConvert.SerializeObject(Model.Gorseller.Select(g => Url.Content(g.DosyaYolu)).ToList()));
+    let currentIndex = 0;
+    const sliderImage = document.getElementById('sliderImage');
+
+    const updateImage = () => {
+        if (images.length > 0) {
+            sliderImage.src = images[currentIndex];
+        }
+    };
+
+    document.getElementById('nextBtn')?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    document.getElementById('prevBtn')?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+</script>

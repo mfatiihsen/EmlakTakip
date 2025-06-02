@@ -1,0 +1,142 @@
+@{
+    ViewData["Title"] = "Yeni Emlak Ekle";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">Yeni Emlak Ekle</h5>
+    </div>
+    <div class="card-body">
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+        <form asp-controller="Home" asp-action="Create" enctype="multipart/form-data" method="post">
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label">Başlık</label>
+                    <input type="text" name="Baslik" class="form-control" placeholder="Örn: Deniz Manzaralı 2+1">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">İlan Tipi</label>
+                    <select name="Tip" class="form-select">
+                        <option disabled selected>Seçiniz...</option>
+                        <option>Satılık</option>
+                        <option>Kiralık</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Fiyat (₺)</label>
+                    <input type="number" name="Fiyat" class="form-control" placeholder="Örn: 1250000">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Adres</label>
+                    <input type="text" name="Adres" class="form-control" placeholder="Örn: İstanbul, Kadıköy">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Metrekare</label>
+                    <input type="number" name="Metrekare" class="form-control" placeholder="Örn: 95">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Oda Sayısı</label>
+                    <input type="text" name="OdaSayisi" class="form-control" placeholder="Örn: 2+1">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Isıtma Tipi</label>
+                    <select name="IsitmaTipi" class="form-select">
+                        <option>Doğalgaz</option>
+                        <option>Klima</option>
+                        <option>Soba</option>
+                        <option>Yerden Isıtma</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Bina Yaşı</label>
+                    <input type="number" name="BinaYasi" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Bulunduğu Kat</label>
+                    <input type="number" name="BulunduguKat" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Toplam Kat</label>
+                    <input type="number" name="KatSayisi" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Banyo Sayısı</label>
+                    <input type="number" name="BanyoSayisi" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Eşyalı mı?</label>
+                    <select name="EsyaliMi" class="form-select">
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Balkon Var mı?</label>
+                    <select name="Balkon" class="form-select">
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Site İçi mi?</label>
+                    <select name="SiteIciMi" class="form-select">
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Krediye Uygun mu?</label>
+                    <select name="KrediliMi" class="form-select">
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Açıklama</label>
+                    <textarea name="Aciklama" rows="4" class="form-control" placeholder="Detaylı bilgi..."></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Görsel Yükle</label>
+                    <input multiple type="file" name="EmlakFoto" class="form-control">
+                </div>
+
+            </div>
+
+            <div class="mt-4 d-flex justify-content-between">
+                <a href="/Emlak" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left me-1"></i> Geri Dön
+                </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="fa-solid fa-check me-1"></i> Kaydet
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

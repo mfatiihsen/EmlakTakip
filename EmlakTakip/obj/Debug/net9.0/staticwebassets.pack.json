@@ -1,0 +1,353 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\EmlakTakip.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EmlakTakip.2n5y7awo2r.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\047fe07f-1ba4-4a76-8c9f-b645aeacb51d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\047fe07f-1ba4-4a76-8c9f-b645aeacb51d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\06198bb2-6135-4359-a874-d95831a82de7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\06198bb2-6135-4359-a874-d95831a82de7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\365a6964-cdc4-42d8-baec-c0cdc34b948f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\365a6964-cdc4-42d8-baec-c0cdc34b948f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\6a98106b-9d26-4577-b68b-c9b304ffed70.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6a98106b-9d26-4577-b68b-c9b304ffed70.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\7ad68ec5-302c-4bff-bbc0-b9a7f4970bab.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\7ad68ec5-302c-4bff-bbc0-b9a7f4970bab.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\829b8755-d0f0-465c-9b14-f85d54ac3719.jpg",
+      "PackagePath": "staticwebassets\\uploads\\829b8755-d0f0-465c-9b14-f85d54ac3719.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\859a3d40-e670-4483-81c1-b2f53eb977a0.jpg",
+      "PackagePath": "staticwebassets\\uploads\\859a3d40-e670-4483-81c1-b2f53eb977a0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\92405791-488a-4bf4-a176-9c02454b5b0b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\92405791-488a-4bf4-a176-9c02454b5b0b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\9b66fa4d-7ec0-4e01-a183-5b5f23a65b51.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9b66fa4d-7ec0-4e01-a183-5b5f23a65b51.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\a9e2422b-6a53-4bee-afdc-b84c27f8ddc8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a9e2422b-6a53-4bee-afdc-b84c27f8ddc8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\aca89a81-ee08-4962-9058-7b3581634784.jpg",
+      "PackagePath": "staticwebassets\\uploads\\aca89a81-ee08-4962-9058-7b3581634784.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\b4e981db-ae50-4cf5-a372-b89362148840.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b4e981db-ae50-4cf5-a372-b89362148840.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\c0445e23-3bf9-4091-972a-b7b684bf8623.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c0445e23-3bf9-4091-972a-b7b684bf8623.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\c1e4251a-0c7b-4382-8c18-7e4a3bac48d1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c1e4251a-0c7b-4382-8c18-7e4a3bac48d1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\de5d2ef4-750c-4d62-9250-3d75e9ac6595.jpg",
+      "PackagePath": "staticwebassets\\uploads\\de5d2ef4-750c-4d62-9250-3d75e9ac6595.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\ea414e1b-8e2f-4b01-b38a-26348170f75b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ea414e1b-8e2f-4b01-b38a-26348170f75b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\fe3abbbc-f6db-47db-8938-f4ebeee70d6b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\fe3abbbc-f6db-47db-8938-f4ebeee70d6b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\uploads\\feb1ef06-b4d2-4380-8fbe-ba82c3964243.jpg",
+      "PackagePath": "staticwebassets\\uploads\\feb1ef06-b4d2-4380-8fbe-ba82c3964243.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EmlakTakip.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EmlakTakip.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.EmlakTakip.props",
+      "PackagePath": "build\\EmlakTakip.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.EmlakTakip.props",
+      "PackagePath": "buildMultiTargeting\\EmlakTakip.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.EmlakTakip.props",
+      "PackagePath": "buildTransitive\\EmlakTakip.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

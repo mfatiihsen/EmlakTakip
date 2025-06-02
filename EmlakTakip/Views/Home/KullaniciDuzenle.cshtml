@@ -1,0 +1,30 @@
+@model EmlakTakip.Models.Kullanicilar
+
+@{
+    ViewData["Title"] = "Kullanıcı Düzenle";
+}
+
+<h4>Kullanıcıyı Düzenle</h4>
+
+<form asp-action="KullaniciDuzenle" asp-controller="Home" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="AdSoyad" class="form-label"></label>
+        <input asp-for="AdSoyad" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="KullaniciAdi" class="form-label"></label>
+        <input asp-for="KullaniciAdi" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

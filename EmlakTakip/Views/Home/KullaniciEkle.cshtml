@@ -1,0 +1,32 @@
+@model EmlakTakip.Models.Kullanicilar;
+
+
+@{
+    ViewData["Title"] = "Yeni Kullanıcı Ekle";
+}
+
+<h4 class="mb-4">Yeni Kullanıcı Ekle</h4>
+
+<form method="post" asp-controller="Home" asp-action="KullaniciEkle" class="form-horizontal">
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label class="form-label">Ad Soyad</label>
+        <input name="AdSoyad" type="text" class="form-control" placeholder="Ad Soyad" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Kullanıcı Adı</label>
+        <input name="KullaniciAdi" type="text" class="form-control" placeholder="admin123" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input name="Email" type="email" class="form-control" placeholder="mail@example.com" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Şifre</label>
+        <input name="Sifre" type="password" class="form-control" placeholder="•••••••" required />
+    </div>
+    <button type="submit" class="btn btn-success">
+        <i class="fa-solid fa-plus me-1"></i> Ekle
+    </button>
+</form>

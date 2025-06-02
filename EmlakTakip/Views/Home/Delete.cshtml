@@ -1,0 +1,33 @@
+
+
+
+@{
+    ViewData["Title"] = "Emlak Sil";
+}
+
+<div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+        <h5 class="mb-0">Emlak Silme Onayı</h5>
+    </div>
+    <div class="card-body">
+        <p>Bu emlağı silmek üzeresiniz. Devam etmek istediğinizden emin misiniz?</p>
+
+        <div class="mb-3">
+            <strong>Başlık:</strong> Deniz Manzaralı 2+1 Daire<br />
+            <strong>Tip:</strong> Kiralık<br />
+            <strong>Fiyat:</strong> ₺2.500.000<br />
+            <strong>Konum:</strong> İstanbul / Kadıköy
+        </div>
+
+        <div class="mt-4 d-flex justify-content-between">
+            <a href="/Emlak/Index" class="btn btn-secondary">
+                <i class="fa-solid fa-xmark me-1"></i> İptal
+            </a>
+            <form method="post">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fa-solid fa-trash me-1"></i> Sil
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
