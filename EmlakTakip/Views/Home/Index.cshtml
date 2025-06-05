@@ -82,3 +82,76 @@
         </table>
     </div>
 </div>
+
+<div class="row mt-5">
+    <!-- Emlak Tipi Grafiği -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Emlak Tipi Dağılımı</h5>
+            </div>
+            <div class="card-body text-center">
+                <canvas id="emlakChart" style="max-width: 400px; max-height: 400px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- İlan Tipi Grafiği -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">İlan Tipi Dağılımı</h5>
+            </div>
+            <div class="card-body text-center">
+                <canvas id="ilanChart" style="max-width: 400px; max-height: 400px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const emlakTipleriLabels = @Html.Raw(Json.Serialize(Model.EmlakTipleri.Keys));
+        const emlakTipleriData = @Html.Raw(Json.Serialize(Model.EmlakTipleri.Values));
+
+        const ilanTipleriLabels = @Html.Raw(Json.Serialize(Model.IlanTipleri.Keys));
+        const ilanTipleriData = @Html.Raw(Json.Serialize(Model.IlanTipleri.Values));
+
+        const ctx1 = document.getElementById('emlakChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: emlakTipleriLabels,
+                datasets: [{
+                    label: 'Emlak Tipleri',
+                    data: emlakTipleriData,
+                    backgroundColor: ['#0d6efd', '#198754', '#ffc107', '#dc3545', '#6610f2', '#fd7e14']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const ctx2 = document.getElementById('ilanChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ilanTipleriLabels,
+                datasets: [{
+                    label: 'İlan Tipleri',
+                    data: ilanTipleriData,
+                    backgroundColor: ['#6610f2', '#fd7e14']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+}

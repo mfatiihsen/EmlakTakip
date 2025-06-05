@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/EmlakTakip/css/site.aqwotd1pvq.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"aqwotd1pvq"},{"Name":"integrity","Value":"sha256-spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo="},{"Name":"label","Value":"_content/EmlakTakip/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1402"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 12:33:59 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EmlakTakip/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1402"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 12:33:59 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OTpq6i7\u002BvXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1604"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OTpq6i7\u002BvXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 03 Jun 2025 09:18:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EmlakTakip/css/site.ng7cpfo1pj.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ng7cpfo1pj"},{"Name":"integrity","Value":"sha256-OTpq6i7\u002BvXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw="},{"Name":"label","Value":"_content/EmlakTakip/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1604"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OTpq6i7\u002BvXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 03 Jun 2025 09:18:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EmlakTakip/EmlakTakip.2n5y7awo2r.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EmlakTakip.2n5y7awo2r.bundle.scp.css'))</AssetFile>

@@ -8,6 +8,7 @@ public class Emlak
     public string Baslik { get; set; }
     public string Aciklama { get; set; }
     public string Tip { get; set; } // Satılık / Kiralık
+    public string EmlakTipi { get; set; }
     public decimal Fiyat { get; set; }
     public string Adres { get; set; }
 
@@ -29,6 +30,6 @@ public class Emlak
     public bool KrediliMi { get; set; }
 
     // Diğer
-   public ICollection<EmlakFoto> Gorseller { get; set; }
+   public ICollection<EmlakFoto>? Gorseller { get; set; } = new List<EmlakFoto>();
     public DateTime IlanTarihi { get; set; } = DateTime.Now;
 }

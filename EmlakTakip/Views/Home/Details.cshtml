@@ -6,208 +6,544 @@
 }
 
 <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: #f5f7fa;
-        color: #222;
+    :root {
+        --primary-color: #4361ee;
+        --secondary-color: #3f37c9;
+        --accent-color: #4895ef;
+        --dark-color: #1b263b;
+        --light-color: #f8f9fa;
     }
 
-    .emlak-detail-wrapper {
+    .property-container {
         max-width: 1200px;
-        margin: 40px auto;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        border-radius: 15px;
-        overflow: hidden;
-        display: flex;
-        background: white;
+        margin: 2rem auto;
+        padding: 0 15px;
     }
 
-    /* Fotoğraf slider bölümü */
-    .slider-container {
-        flex: 1.3;
-        position: relative;
-        overflow: hidden;
+    .property-header {
+        margin-bottom: 2rem;
     }
 
-    .slider-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-        cursor: grab;
-        user-select: none;
+    .property-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 0.5rem;
     }
 
-    /* Sağ bilgi bölümü */
-    .info-panel {
-        flex: 0.7;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        padding: 40px 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .info-panel h1 {
-        font-weight: 600;
-        font-size: 2rem;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
-    }
-
-    .info-panel .price {
+    .property-price {
         font-size: 1.8rem;
         font-weight: 700;
-        margin-bottom: 30px;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
     }
 
-    .info-panel .details-list {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 30px 0;
-    }
-
-    .info-panel .details-list li {
-        margin-bottom: 15px;
-        font-weight: 500;
+    .property-meta {
         display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding-bottom: 6px;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
     }
 
-    .info-panel .details-list li span.label {
-        opacity: 0.8;
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #6c757d;
     }
 
-    .info-panel .description {
-        font-weight: 300;
-        line-height: 1.5;
-        font-size: 1rem;
-        max-height: 140px;
-        overflow-y: auto;
-        padding-right: 5px;
+    .gallery-container {
+        position: relative;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    /* Scrollbar modernize */
-    .info-panel .description::-webkit-scrollbar {
-        width: 6px;
+    .main-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        cursor: pointer;
     }
 
-    .info-panel .description::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 10px;
-    }
-
-    /* Responsive */
-    media (max-width: 900px) {
-        .emlak-detail-wrapper {
-            flex-direction: column;
-            box-shadow: none;
-            border-radius: 0;
-        }
-
-        .slider-container,
-        .info-panel {
-            flex: none;
-            width: 100%;
-            border-radius: 0;
-        }
-
-        .info-panel {
-            padding: 30px 20px;
-        }
-    }
-
-    .slider-btn {
+    .gallery-nav {
         position: absolute;
         top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.3);
-        border: none;
+    }
+
+    .nav-btn {
+        background-color: rgba(0, 0, 0, 0.5);
         color: white;
-        font-size: 2rem;
-        padding: 5px 12px;
-        cursor: pointer;
-        user-select: none;
+        border: none;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        z-index: 10;
-        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
 
-    .slider-btn:hover {
-        background-color: rgba(0, 0, 0, 0.6);
+    .nav-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
-    #prevBtn {
-        left: 10px;
+    .thumbnails {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        overflow-x: auto;
+        padding: 10px 0;
     }
 
-    #nextBtn {
-        right: 10px;
+    .thumbnail {
+        width: 100px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .thumbnail:hover, .thumbnail.active {
+        transform: scale(1.05);
+        border-color: var(--primary-color);
+    }
+
+    .property-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .property-details {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--dark-color);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent-color);
+    }
+
+    .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .detail-item {
+        margin-bottom: 1rem;
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: #6c757d;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    .detail-value {
+        color: var(--dark-color);
+        font-weight: 500;
+    }
+
+    .property-description {
+        line-height: 1.7;
+        color: #495057;
+        margin-top: 1.5rem;
+    }
+
+    .property-map {
+        height: 400px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .amenities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .amenity {
+        background: #f1f3f5;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .amenity i {
+        color: var(--primary-color);
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--light-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+    }
+
+    .contact-btn {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        text-align: center;
+        width: 100%;
+        font-weight: 600;
+        margin-top: 1rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        color: white;
+    }
+
+    .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.meta-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    @@media (max-width: 992px) {
+        .property-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .main-image {
+            height: 350px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .detail-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
-<div class="emlak-detail-wrapper">
-
-    <div class="slider-container" id="sliderContainer">
-        @if (Model.Gorseller != null && Model.Gorseller.Any())
-        {
-            <button id="prevBtn" class="slider-btn">&#10094;</button>
-            <img src="@Model.Gorseller.FirstOrDefault().DosyaYolu" alt="Emlak Fotoğrafı" id="sliderImage"
-                draggable="false" />
-            <button id="nextBtn" class="slider-btn">&#10095;</button>
-        }
-        else
-        {
-            <img src="/images/no-image.png" alt="Fotoğraf Yok" id="sliderImage" draggable="false" />
-        }
-    </div>
-
-    <div class="info-panel">
-        <h1>@Model.Baslik</h1>
-        <div class="price">@String.Format("{0:C}", Model.Fiyat)</div>
-
-        <ul class="details-list">
-            <li><span class="label">İlan Tipi</span><span>@Model.Tip</span></li>
-            <li><span class="label">Adres</span><span>@Model.Adres</span></li>
-            <li><span class="label">Metrekare</span><span>@Model.Metrekare m²</span></li>
-            <li><span class="label">Oda Sayısı</span><span>@Model.OdaSayisi</span></li>
-            <li><span class="label">Isıtma Tipi</span><span>@Model.IsitmaTipi</span></li>
-            <li><span class="label">Kat</span><span>@Model.KatSayisi</span></li>
-            <li><span class="label">İlan Tarihi</span><span>@Model.IlanTarihi.ToString("dd.MM.yyyy")</span></li>
-        </ul>
-
-        <div class="description">
-            <strong>Açıklama:</strong>
-            <p>@Model.Aciklama</p>
+<div class="property-container">
+    <div class="property-header">
+        <h1 class="property-title">@Model.Baslik</h1>
+        <div class="property-price">@Model.Fiyat.ToString("N0") ₺</div>
+        <div class="property-meta">
+            <div class="meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>@Model.Adres</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>@Model.IlanTarihi.ToString("dd.MM.yyyy")</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-tag"></i>
+                <span>@Model.Tip</span>
+            </div>
         </div>
     </div>
 
+    <div class="gallery-container">
+        @if (Model.Gorseller != null && Model.Gorseller.Any())
+        {
+            <img src="@Model.Gorseller.First().DosyaYolu" alt="@Model.Baslik" class="main-image" id="mainImage">
+            <div class="gallery-nav">
+                <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="thumbnails">
+                @foreach (var (image, index) in Model.Gorseller.Select((img, i) => (img, i)))
+                {
+                    <img src="@image.DosyaYolu" alt="Emlak fotoğrafı" class="thumbnail @(index == 0 ? "active" : "")" data-index="@index">
+                }
+            </div>
+        }
+        else
+        {
+            <img src="/images/no-image.jpg" alt="Fotoğraf yok" class="main-image">
+        }
+    </div>
+
+    <div class="property-content">
+        <div class="property-details">
+            <h3 class="section-title">Özellikler</h3>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Metrekare</span>
+                    <span class="detail-value">@Model.Metrekare m²</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Oda Sayısı</span>
+                    <span class="detail-value">@Model.OdaSayisi</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Bina Yaşı</span>
+                    <span class="detail-value">@Model.BinaYasi yıl</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Kat</span>
+                    <span class="detail-value">@Model.BulunduguKat. Kat (@Model.KatSayisi katlı)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Isıtma Tipi</span>
+                    <span class="detail-value">@Model.IsitmaTipi</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Banyo Sayısı</span>
+                    <span class="detail-value">@Model.BanyoSayisi</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Eşyalı</span>
+                    <span class="detail-value">@(Model.EsyaliMi ? "Evet" : "Hayır")</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Site İçinde</span>
+                    <span class="detail-value">@(Model.SiteIciMi ? "Evet" : "Hayır")</span>
+                </div>
+            
+            </div>
+
+            <div class="amenities">
+                @if (Model.Balkon)
+                {
+                    <div class="amenity">
+                        <i class="fas fa-umbrella-beach"></i> Balkon
+                    </div>
+                }
+                @if (Model.KrediliMi)
+                {
+                    <div class="amenity">
+                        <i class="fas fa-hand-holding-usd"></i> Krediye Uygun
+                    </div>
+                }
+
+  <div class="meta-item">
+        @{
+            var emlakTipiIcon = Model.EmlakTipi switch
+            {
+                "Daire" => "fa-building",
+                "Villa" => "fa-home",
+                "Arsa" => "fa-tree",
+                "Dükkan" => "fa-store",
+                "İşyeri" => "fa-briefcase",
+                _ => "fa-home"
+            };
+        }
+        <i class="fas @emlakTipiIcon"></i>
+        <span>@Model.EmlakTipi</span>
+    </div>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 2rem;">Açıklama</h3>
+            <div class="property-description">
+                @Model.Aciklama
+            </div>
+
+            
+        </div>
+
+      
+    </div>
 </div>
 
-<script>
-    const images = @Html.Raw(JsonConvert.SerializeObject(Model.Gorseller.Select(g => Url.Content(g.DosyaYolu)).ToList()));
-    let currentIndex = 0;
-    const sliderImage = document.getElementById('sliderImage');
+@section Scripts {
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script>
+    
+    <script>
+        // Fotoğraf Galerisi
+        const images = @Html.Raw(JsonConvert.SerializeObject(Model.Gorseller?.Select(g => g.DosyaYolu) ?? []));
+        let currentIndex = 0;
+        const mainImage = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
 
-    const updateImage = () => {
-        if (images.length > 0) {
-            sliderImage.src = images[currentIndex];
+        function updateGallery() {
+            if (images.length > 0) {
+                mainImage.src = images[currentIndex];
+                
+                // Thumbnail aktif durumunu güncelle
+                thumbnails.forEach((thumb, index) => {
+                    thumb.classList.toggle('active', index === currentIndex);
+                });
+            }
         }
-    };
 
-    document.getElementById('nextBtn')?.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
-    });
+        // Thumbnail tıklamaları
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                currentIndex = parseInt(thumb.dataset.index);
+                updateGallery();
+            });
+        });
 
-    document.getElementById('prevBtn')?.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-</script>
+        // Önceki/Sonraki butonları
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateGallery();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateGallery();
+            });
+        }
+
+        // Klavye ile gezinme
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateGallery();
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateGallery();
+            }
+        });
+
+        // Google Haritalar
+        function initMap() {
+            @if (Model.Enlem.HasValue && Model.Boylam.HasValue)
+            {
+                <text>
+                const propertyLocation = { lat: @Model.Enlem.Value, lng: @Model.Boylam.Value };
+                
+                const map = new google.maps.Map(document.getElementById("propertyMap"), {
+                    center: propertyLocation,
+                    zoom: 15,
+                    styles: [
+                        {
+                            "featureType": "poi",
+                            "stylers": [{"visibility": "off"}]
+                        },
+                        {
+                            "featureType": "transit",
+                            "stylers": [{"visibility": "off"}]
+                        }
+                    ]
+                });
+
+                // Ana işaretçi
+                new google.maps.Marker({
+                    position: propertyLocation,
+                    map: map,
+                    title: "@Model.Baslik",
+                    icon: {
+                        url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                    }
+                });
+
+                // Yakın çevredeki önemli yerler
+                const placesService = new google.maps.places.PlacesService(map);
+                const request = {
+                    location: propertyLocation,
+                    radius: '500',
+                    type: ['school', 'hospital', 'park', 'shopping_mall', 'train_station', 'pharmacy']
+                };
+
+                placesService.nearbySearch(request, (results, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        results.forEach(place => {
+                            new google.maps.Marker({
+                                position: place.geometry.location,
+                                map: map,
+                                title: place.name,
+                                icon: {
+                                    url: "https://maps.google.com/mapfiles/kml/pal3/icon21.png",
+                                    scaledSize: new google.maps.Size(25, 25)
+                                }
+                            });
+                        });
+                    }
+                });
+
+                // Konum bilgisi için bilgi penceresi
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<div style="padding: 10px;">
+                                <h3 style="margin: 0 0 5px 0; font-size: 16px;">@Model.Baslik</h3>
+                                <p style="margin: 0; font-size: 14px;">@Model.Adres</p>
+                              </div>`
+                });
+
+                // Haritaya tıklanınca bilgi penceresini aç
+                map.addListener('click', () => {
+                    infoWindow.open(map);
+                });
+
+                // İlk açılışta bilgi penceresini göster
+                infoWindow.setPosition(propertyLocation);
+                infoWindow.open(map);
+                </text>
+            }
+        }
+
+    </script>
+}

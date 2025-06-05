@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nxZhxPOy9Z6r60Fq4e9qK75Uqj1T/Mxs49btnvnxOOY=",
+  "Hash": "IDwgIEVU5huhDFos9IDcXjY6IOuvUTaklGcWhqhxaJc=",
   "Source": "EmlakTakip",
   "BasePath": "_content/EmlakTakip",
   "Mode": "Default",
@@ -1214,12 +1214,12 @@
       "OriginalItemSpec": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-aqwotd1pvq.gz",
+      "Identity": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-ng7cpfo1pj.gz",
       "SourceId": "EmlakTakip",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/EmlakTakip",
-      "RelativePath": "css/site#[.{fingerprint=aqwotd1pvq}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=ng7cpfo1pj}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1228,8 +1228,8 @@
       "RelatedAsset": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "o19h8v6n5l",
-      "Integrity": "DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30=",
+      "Fingerprint": "fz3i2zw5ja",
+      "Integrity": "q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "aqwotd1pvq",
-      "Integrity": "spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=",
+      "Fingerprint": "ng7cpfo1pj",
+      "Integrity": "OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -3106,13 +3106,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.aqwotd1pvq.css",
-      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-aqwotd1pvq.gz",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-ng7cpfo1pj.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001689189189"
+          "Quality": "0.001506024096"
         }
       ],
       "ResponseHeaders": [
@@ -3122,19 +3122,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "591"
+          "Value": "663"
         },
         {
           "Name": "ETag",
-          "Value": "\"DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30=\""
+          "Value": "\"q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 12:33:59 GMT"
+          "Value": "Tue, 03 Jun 2025 09:18:17 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -3150,26 +3150,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=\""
+          "Value": "W/\"OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "aqwotd1pvq"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo="
+          "Value": "sha256-OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw="
         }
       ]
     },
     {
-      "Route": "css/site.aqwotd1pvq.css",
+      "Route": "css/site.css",
       "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3179,7 +3171,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1402"
+          "Value": "1604"
         },
         {
           "Name": "Content-Type",
@@ -3187,11 +3179,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=\""
+          "Value": "\"OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 12:33:59 GMT"
+          "Value": "Tue, 03 Jun 2025 09:18:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-ng7cpfo1pj.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "663"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 09:18:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.ng7cpfo1pj.css",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-ng7cpfo1pj.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001506024096"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "663"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 09:18:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ng7cpfo1pj"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.ng7cpfo1pj.css",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 09:18:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3201,7 +3338,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aqwotd1pvq"
+          "Value": "ng7cpfo1pj"
         },
         {
           "Name": "label",
@@ -3209,13 +3346,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo="
+          "Value": "sha256-OTpq6i7+vXGjkeMeLP73pNhH1cNXLyWXFcnxYoGAGiw="
         }
       ]
     },
     {
-      "Route": "css/site.aqwotd1pvq.css.gz",
-      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-aqwotd1pvq.gz",
+      "Route": "css/site.ng7cpfo1pj.css.gz",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-ng7cpfo1pj.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3224,7 +3361,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "591"
+          "Value": "663"
         },
         {
           "Name": "Content-Type",
@@ -3232,11 +3369,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30=\""
+          "Value": "\"q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 12:33:59 GMT"
+          "Value": "Tue, 03 Jun 2025 09:18:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3254,7 +3391,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aqwotd1pvq"
+          "Value": "ng7cpfo1pj"
         },
         {
           "Name": "label",
@@ -3262,144 +3399,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-aqwotd1pvq.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001689189189"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "591"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 12:33:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1402"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 12:33:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-spytp4P8qkFoW3iZbv73q6ctUD3YxJQaNNNRv9Q5EKo="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\PC\\Desktop\\projeler\\emlak\\EmlakTakip\\obj\\Debug\\net9.0\\compressed\\xi74k4deop-aqwotd1pvq.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "591"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 12:33:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-DEzedTwTh5paUYofhWg0OE9+NWjr0xdGdEC2JcKdK30="
+          "Value": "sha256-q9KI+fT66WRy7PrAztY+lWiDiyOsJ1MxclH5JZ2EsEE="
         }
       ]
     },

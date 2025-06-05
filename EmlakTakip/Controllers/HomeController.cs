@@ -7,10 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmlakTakip.Controllers;
 
-public class HomeController : Controller
+public class HomeController : BaseController
 {
     private readonly ILogger<HomeController> _logger;
     private readonly UygulamaDbContext _context;
@@ -25,26 +26,42 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-          var model = new DashboardViewModel
-    {
-        ToplamEmlak = _context.Emlaklar.Count(),
-        SatilikIlanSayisi = _context.Emlaklar.Count(e => e.Tip == "Satılık"),
-        KiralikIlanSayisi = _context.Emlaklar.Count(e => e.Tip == "Kiralık"),
-        KullaniciSayisi = _context.Kullanicilars.Count(),
-        SonEklenenIlanlar = _context.Emlaklar
-            .OrderByDescending(e => e.IlanTarihi)
-            .Take(5)
-            .ToList()
-    };
+        var emlakTipleri = _context.Emlaklar
+            .GroupBy(e => e.EmlakTipi) // Örneğin: "Daire", "Villa"
+            .ToDictionary(g => g.Key, g => g.Count());
 
-    return View(model);
+        var ilanTipleri = _context.Emlaklar
+            .GroupBy(e => e.Tip) // Örneğin: "Satılık", "Kiralık"
+            .ToDictionary(g => g.Key, g => g.Count());
+
+        var model = new DashboardViewModel
+        {
+            ToplamEmlak = _context.Emlaklar.Count(),
+            SatilikIlanSayisi = _context.Emlaklar.Count(e => e.Tip == "Satılık"),
+            KiralikIlanSayisi = _context.Emlaklar.Count(e => e.Tip == "Kiralık"),
+            KullaniciSayisi = _context.Kullanicilars.Count(),
+            SonEklenenIlanlar = _context.Emlaklar
+                .OrderByDescending(e => e.IlanTarihi)
+                .Take(5)
+                .ToList(),
+            EmlakTipleri = emlakTipleri,
+            IlanTipleri = ilanTipleri
+        };
+
+        return View(model);
     }
 
 
-    public IActionResult EmlakListeleme()
+    public IActionResult EmlakListeleme(string? tip)
     {
-        var emlaklar = _context.Emlaklar.ToList();  // EF Core ile veritabanından çekiyoruz
-        return View(emlaklar);
+        var emlaklar = _context.Emlaklar.AsQueryable();
+
+        if (!string.IsNullOrEmpty(tip))
+        {
+            emlaklar = emlaklar.Where(e => e.Tip == tip);
+        }
+
+        return View(emlaklar.ToList());
     }
 
     [HttpGet]
@@ -74,6 +91,7 @@ public class HomeController : Controller
             IsitmaTipi = model.IsitmaTipi,
             BulunduguKat = model.BulunduguKat,
             KatSayisi = model.KatSayisi,
+            EmlakTipi = model.EmlakTipi,
             Balkon = model.Balkon,
             Gorseller = new List<EmlakFoto>()
         };
@@ -104,13 +122,6 @@ public class HomeController : Controller
     }
 
 
-
-    public IActionResult Edit()
-    {
-        return View();
-    }
-
-    // EmlakController.cs
     public async Task<IActionResult> DetayJson(int id)
     {
         var emlak = await _context.Emlaklar.FindAsync(id);
@@ -222,45 +233,6 @@ public class HomeController : Controller
 
 
 
-    [HttpGet]
-    public IActionResult Login()
-    {
-        return View();
-    }
-
-
-    [HttpPost]
-    public IActionResult Login(LoginViewModel model)
-    {
-        if (!ModelState.IsValid)
-        {
-            return View(model);
-        }
-
-        var admin = _context.Kullanicilars
-            .FirstOrDefault(a => a.KullaniciAdi == model.KullaniciAdi && a.Sifre == model.Sifre);
-
-        if (admin == null)
-        {
-            ModelState.AddModelError("", "Kullanıcı adı veya şifre yanlış.");
-            return View(model);
-        }
-
-        // Giriş başarılı, oturum başlat
-        HttpContext.Session.SetInt32("AdminId", admin.Id);
-        HttpContext.Session.SetString("AdminKullaniciAdi", admin.KullaniciAdi);
-
-        return RedirectToAction("Index", "Home");
-    }
-
-    // Çıkış işlemi
-    [HttpPost]
-    public async Task<IActionResult> Logout()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Login", "Home");
-    }
-
 
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> KullaniciSil(int id)
@@ -326,39 +298,78 @@ public class HomeController : Controller
         return View();
     }
 
-[HttpPost]
-[ValidateAntiForgeryToken]
-public IActionResult KullaniciDuzenle(Kullanicilar kullanici)
-{
-    if (!ModelState.IsValid)
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult KullaniciDuzenle(Kullanicilar kullanici)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(kullanici);
+        }
+
+        var mevcut = _context.Kullanicilars.Find(kullanici.Id);
+        if (mevcut == null) return NotFound();
+
+        mevcut.AdSoyad = kullanici.AdSoyad;
+        mevcut.KullaniciAdi = kullanici.KullaniciAdi;
+        mevcut.Email = kullanici.Email;
+        // Şifre alanını güncellemiyoruz
+
+        _context.SaveChanges();
+        return RedirectToAction("Kullanicilar", "Home");
+    }
+
+    [HttpGet]
+    public IActionResult KullaniciDuzenle(int id)
+    {
+        var kullanici = _context.Kullanicilars.Find(id);
+        if (kullanici == null)
+        {
+            return NotFound();
+        }
         return View(kullanici);
     }
 
-    var mevcut = _context.Kullanicilars.Find(kullanici.Id);
-    if (mevcut == null) return NotFound();
 
-    mevcut.AdSoyad = kullanici.AdSoyad;
-    mevcut.KullaniciAdi = kullanici.KullaniciAdi;
-    mevcut.Email = kullanici.Email;
-
-    if (!string.IsNullOrWhiteSpace(kullanici.Sifre))
+    [HttpGet]
+    public IActionResult Edit(int id)
     {
-        mevcut.Sifre = kullanici.Sifre;
+        var emlak = _context.Emlaklar.Find(id);
+        if (emlak == null)
+        {
+            return NotFound();
+        }
+        return View(emlak);
     }
 
-    _context.SaveChanges();
-    return RedirectToAction("Index", "Kullanicilar");
-}
-
-[HttpGet]
-public IActionResult KullaniciDuzenle(int id)
-{
-    var kullanici = _context.Kullanicilars.Find(id);
-    if (kullanici == null)
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Edit(Emlak model)
     {
-        return NotFound();
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        var existingEmlak = _context.Emlaklar.Find(model.Id);
+        if (existingEmlak == null)
+        {
+            return NotFound();
+        }
+
+        // Güncellenecek alanlar
+        existingEmlak.Baslik = model.Baslik;
+        existingEmlak.Tip = model.Tip;
+        existingEmlak.Fiyat = model.Fiyat;
+        existingEmlak.Adres = model.Adres;
+        existingEmlak.Metrekare = model.Metrekare;
+        existingEmlak.OdaSayisi = model.OdaSayisi;
+        existingEmlak.IsitmaTipi = model.IsitmaTipi;
+        existingEmlak.KatSayisi = model.KatSayisi;
+        existingEmlak.Aciklama = model.Aciklama;
+
+        _context.SaveChanges();
+        return RedirectToAction("Index");
     }
-    return View(kullanici);
-}
+
 }

@@ -2,12 +2,13 @@
 
 
 using EmlakTakip.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmlakTakip.Data;
 
 
-public class UygulamaDbContext : DbContext
+public class UygulamaDbContext : IdentityDbContext
 {
     public UygulamaDbContext(DbContextOptions<UygulamaDbContext> options) : base(options) { }
 

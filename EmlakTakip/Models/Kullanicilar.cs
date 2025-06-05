@@ -13,7 +13,7 @@ namespace EmlakTakip.Models
 
         [Required(ErrorMessage = "Kullanıcı Adı alanı zorunludur.")]       
   public string KullaniciAdi { get; set; }
-        public string Sifre { get; set; }
+        public string? Sifre { get; set; }
          [Required(ErrorMessage = "Email alanı zorunludur.")]
         public string Email { get; set; }
         public DateTime KayitTarihi { get; set; } = DateTime.Now;

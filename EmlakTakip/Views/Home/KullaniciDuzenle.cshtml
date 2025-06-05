@@ -5,7 +5,12 @@
 }
 
 <h4>Kullanıcıyı Düzenle</h4>
-
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <div asp-validation-summary="All"></div>
+    </div>
+}
 <form asp-action="KullaniciDuzenle" asp-controller="Home" method="post">
     @Html.AntiForgeryToken()
     <input type="hidden" asp-for="Id" />

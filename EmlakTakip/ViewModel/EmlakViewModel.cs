@@ -12,6 +12,7 @@ namespace EmlakTakip.ViewModel
         public string Baslik { get; set; }
         public string Aciklama { get; set; }
         public string Tip { get; set; } // Satılık / Kiralık
+        public string EmlakTipi { get; set; } // Satılık / Kiralık
         public decimal Fiyat { get; set; }
         public string Adres { get; set; }
 

@@ -1,8 +1,19 @@
+@using Azure.Core
 @model List<EmlakTakip.Models.Emlak>
 
 @{
     ViewData["Title"] = "Emlak Listesi";
+    var tip = Context.Request.Query["tip"].ToString();
 }
+<form method="get" class="mb-3 d-flex gap-2 align-items-center">
+    <label for="tip" class="form-label mb-0">İlan Tipi:</label>
+    <select name="tip" id="tip" class="form-select w-auto" onchange="this.form.submit()">
+        <option value="">Tümü</option>
+        <option value="Satılık" selected="@(tip == "Satılık")">Satılık</option>
+        <option value="Kiralık" selected="@(tip == "Kiralık")">Kiralık</option>
+    </select>
+</form>
+
 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
@@ -35,7 +46,7 @@
                             <a href="/Home/Details/@Model[i].Id" class="btn btn-sm btn-outline-secondary">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
-                            <a href="@Url.Action("Edit", "Emlak", new { id = Model[i].Id })"
+                            <a href="@Url.Action("Edit", "Home", new { id = Model[i].Id })"
                                 class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></a>
                             <a asp-action="Delete" asp-route-id="@Model.FirstOrDefault()?.Id"
                                 class="btn btn-danger btn-sm">Sil</a>

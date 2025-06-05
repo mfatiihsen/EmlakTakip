@@ -1,52 +1,100 @@
+@model EmlakTakip.Models.Emlak
+
 @{
     ViewData["Title"] = "Emlak Düzenle";
 }
 
-<div class="card">
-    <div class="card-header">
-        <h5 class="mb-0">Emlak Düzenle</h5>
-    </div>
-    <div class="card-body">
-        <form>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label for="Baslik" class="form-label">Başlık</label>
-                    <input type="text" class="form-control" id="Baslik" value="Deniz Manzaralı 2+1 Daire">
+<div class="container">
+    <h2>Emlak Düzenle</h2>
+    <hr />
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <div asp-validation-summary="All"></div>
+        </div>
+    }
+
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="Baslik" class="form-label"></label>
+                    <input asp-for="Baslik" class="form-control" />
+                    <span asp-validation-for="Baslik" class="text-danger"></span>
                 </div>
-                <div class="col-md-6">
-                    <label for="Tip" class="form-label">Tip</label>
-                    <select id="Tip" class="form-select">
-                        <option>Satılık</option>
-                        <option selected>Kiralık</option>
+
+                <div class="mb-3">
+                    <label asp-for="Tip" class="form-label"></label>
+                    <select asp-for="Tip" class="form-select">
+                        <option value="Satılık">Satılık</option>
+                        <option value="Kiralık">Kiralık</option>
                     </select>
+                    <span asp-validation-for="Tip" class="text-danger"></span>
                 </div>
-                <div class="col-md-6">
-                    <label for="Fiyat" class="form-label">Fiyat (₺)</label>
-                    <input type="number" class="form-control" id="Fiyat" value="2500000">
+
+                <div class="mb-3">
+                    <label asp-for="Fiyat" class="form-label"></label>
+                    <input asp-for="Fiyat" class="form-control" />
+                    <span asp-validation-for="Fiyat" class="text-danger"></span>
                 </div>
-                <div class="col-md-6">
-                    <label for="Konum" class="form-label">Konum</label>
-                    <input type="text" class="form-control" id="Konum" value="İstanbul / Kadıköy">
-                </div>
-                <div class="col-12">
-                    <label for="Aciklama" class="form-label">Açıklama</label>
-                    <textarea class="form-control" id="Aciklama"
-                        rows="4">Muhteşem deniz manzaralı daire. Merkezi konumda.</textarea>
-                </div>
-                <div class="col-12">
-                    <label for="Gorsel" class="form-label">Görseli Değiştir</label>
-                    <input class="form-control" type="file" id="Gorsel">
+
+                <div class="mb-3">
+                    <label asp-for="Adres" class="form-label"></label>
+                    <input asp-for="Adres" class="form-control" />
+                    <span asp-validation-for="Adres" class="text-danger"></span>
                 </div>
             </div>
 
-            <div class="mt-4 d-flex justify-content-between">
-                <a href="/Emlak/Index" class="btn btn-secondary">
-                    <i class="fa-solid fa-arrow-left me-1"></i> Vazgeç
-                </a>
-                <button type="submit" class="btn btn-warning">
-                    <i class="fa-solid fa-save me-1"></i> Güncelle
-                </button>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="Metrekare" class="form-label"></label>
+                    <input asp-for="Metrekare" class="form-control" />
+                    <span asp-validation-for="Metrekare" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="OdaSayisi" class="form-label"></label>
+                    <input asp-for="OdaSayisi" class="form-control" />
+                    <span asp-validation-for="OdaSayisi" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IsitmaTipi" class="form-label"></label>
+                    <select asp-for="IsitmaTipi" class="form-select">
+                        <option value="Doğalgaz">Doğalgaz</option>
+                        <option value="Soba">Soba</option>
+                        <option value="Klima">Klima</option>
+                    </select>
+                    <span asp-validation-for="IsitmaTipi" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="KatSayisi" class="form-label"></label>
+                    <input asp-for="KatSayisi" class="form-control" />
+                    <span asp-validation-for="KatSayisi" class="text-danger"></span>
+                </div>
             </div>
-        </form>
-    </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Aciklama" class="form-label"></label>
+            <textarea asp-for="Aciklama" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Aciklama" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a asp-action="Index" class="btn btn-secondary">İptal</a>
+        </div>
+    </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
