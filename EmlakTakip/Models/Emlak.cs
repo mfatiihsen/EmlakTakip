@@ -30,6 +30,6 @@ public class Emlak
     public bool KrediliMi { get; set; }
 
     // Diğer
-   public ICollection<EmlakFoto>? Gorseller { get; set; } = new List<EmlakFoto>();
+   public List<EmlakFoto>? Gorseller { get; set; } = new List<EmlakFoto>();
     public DateTime IlanTarihi { get; set; } = DateTime.Now;
 }
